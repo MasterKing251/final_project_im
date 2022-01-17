@@ -31,8 +31,6 @@ try {
                         <tr class="text-center">
                             <th>Name</th>
                             <th>User Type</th>
-
-
                         </tr>
                     </thead>
                     <tbody class="table-body ">
@@ -45,7 +43,6 @@ try {
                             <td class="text-center" style="text-transform: uppercase;">
                                 <?php echo $account->user_type; ?>
                             </td>
-
                         </tr>
                         <?php } ?>
                     </tbody>
@@ -59,8 +56,6 @@ try {
                         <tr class="text-center">
                             <th>Product Name</th>
                             <th>Price</th>
-
-
                         </tr>
                     </thead>
                     <tbody class="table-body hov">
@@ -72,7 +67,6 @@ try {
                             </td>
                             <td class="text-center" style="text-transform: uppercase;"><?php echo $product->price; ?>
                             </td>
-
                         </tr>
                         <?php } ?>
                     </tbody>

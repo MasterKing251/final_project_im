@@ -19,7 +19,7 @@ body {
 .container {
   color: white;
   margin-top: 5px;
-  background: rgba(0, 0, 0, 0.876);
+  background: #02213ec7;
   padding: 10px;
   border-radius: 10px;
 }

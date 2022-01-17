@@ -2,9 +2,6 @@
 include "../auth/auth.check.php";
 
 $pdo = pdo_init();
-// SELECT b.name, MAX(total_num)Total FROM ( SELECT a.order_id, SUM(a.total) AS total_num FROM payment a GROUP BY a.product_id ) as sums ,payment a, products b WHERE a.product_id=b.id
-
-// SELECT name,product_id,SUM(a.total) AS total_num FROM payment a, products b where a.product_id=b.id GROUP by product_id
 
 ?>
 <!DOCTYPE html>
@@ -33,31 +30,35 @@ include "assets/navbar.php"?>
     <body>
         <?php
         $user=$_SESSION['user'];
-        //join query
-        $query = $pdo->prepare("SELECT a.name, b.quantity,a.price  from orders b,products a where a.id=b.product_id");
-        $query->execute(array());
-        $list = $query->fetchAll(PDO::FETCH_OBJ);
+        if ($user) {
+            try {
+                //join query
+                $query = $pdo->prepare("SELECT a.name, b.quantity,a.price  from orders b,products a where a.id=b.product_id");
+                $query->execute(array());
+                $list = $query->fetchAll(PDO::FETCH_OBJ);
 
-        $query1 = $pdo->prepare("SELECT * FROM user_info WHERE user_id=".$user->user_id);
-        $query1->execute(array());
-        $accounts = $query1->fetchAll(PDO::FETCH_OBJ);
-        $account = $accounts[0];
-        //subqueries
-        $query2 = $pdo->prepare("SELECT prod1, MAX(total_num)Total FROM ( SELECT a.product_id as prod1, SUM(a.total) AS total_num FROM payment a GROUP BY a.product_id ) as sums ,payment a, products b WHERE Total=total_num");
-        $query2->execute(array());
-        $mostPops = $query2->fetchAll(PDO::FETCH_OBJ);
-        $mostPop = $mostPops[0];
-        //join query
-        $query3 = $pdo->prepare("SELECT name,product_id,SUM(a.total) AS total_num FROM payment a, products b where a.product_id=b.id GROUP by product_id");
-        $query3->execute(array());
-        $prodSums = $query3->fetchAll(PDO::FETCH_OBJ);
-        $query4 = $pdo->prepare("SELECT name FROM  products  where id=".$mostPop->prod1);
-        $query4->execute(array());
-        $prodNames = $query4->fetchAll(PDO::FETCH_OBJ);
-        $prodName = $prodNames[0];
-
-        if ($account->user_type == "ADMIN" || $account->user_type == "DELIVERY") { ?>
-
+                $query1 = $pdo->prepare("SELECT * FROM user_info WHERE user_id=".$user->user_id);
+                $query1->execute(array());
+                $accounts = $query1->fetchAll(PDO::FETCH_OBJ);
+                $account = $accounts[0];
+                //subqueries
+                $query2 = $pdo->prepare("SELECT prod1, MAX(total_num)Total FROM ( SELECT a.product_id as prod1, SUM(a.total) AS total_num FROM payment a GROUP BY a.product_id ) as sums ,payment a, products b ");
+                $query2->execute(array());
+                $mostPops = $query2->fetchAll(PDO::FETCH_OBJ);
+                $mostPop = $mostPops[0];
+                //join query
+                $query3 = $pdo->prepare("SELECT name,product_id,SUM(a.total) AS total_num FROM payment a, products b where a.product_id=b.id GROUP by product_id");
+                $query3->execute(array());
+                $prodSums = $query3->fetchAll(PDO::FETCH_OBJ);
+                $query4 = $pdo->prepare("SELECT name FROM  products  where id=".$mostPop->prod1);
+                $query4->execute(array());
+                $prodNames = $query4->fetchAll(PDO::FETCH_OBJ);
+                $prodName = $prodNames[0];
+            } catch (PDOException $e) {
+                $error = "Errors: {$e->getMessage()} ";
+            }
+        }
+        if ($account->user_type == "ADMIN" || $account->user_type == "CASHIER") { ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -76,7 +77,6 @@ include "assets/navbar.php"?>
                                 <td> <?php echo $mostPop->Total; ?>
                                 </td>
                             </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -120,9 +120,6 @@ include "assets/navbar.php"?>
                         <th>Total</th>
                     </tr>
                 </thead>
-
-
-
                 <tbody>
                     <?php
 
@@ -144,7 +141,7 @@ include "assets/navbar.php"?>
         </div>
         <?php
         } else { ?>
-        <div style="color:white;" class="container display-4 text-center">Only employees can access this page</div>
+        <div style="color:white;" class="container display-4 text-center">Access Denied</div>
 
         <?php }?>
 

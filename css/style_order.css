@@ -18,18 +18,26 @@
 .availProd {
   padding: 10px;
   border-radius: 25px;
-  background-color: #ab6832;
+  background-color: #02213ec7;
+  color: white;
 }
 .coffeeContent {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  color: rgb(255, 255, 255);
 }
-
+.card {
+  margin: 10px;
+  background-color: #02213ec7;
+}
 .btn-warning {
   color: white;
   background-color: #49281a;
   border-color: #49281a;
+}
+.card-title-name {
+  font-size: 28px;
 }
 .form-check-label {
   margin: 0px 10px;
@@ -83,8 +91,12 @@ body {
 label {
   font-size: 2rem;
 }
-footer {
-  height: 50px;
+.input1 {
   width: 100%;
-  background-color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+}
+.input2 {
+  margin-top: 10px;
+  width: 100%;
 }

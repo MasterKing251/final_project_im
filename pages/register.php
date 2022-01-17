@@ -33,6 +33,7 @@ if (isset($_POST["submit"])) {
 
         try {
             $pdo = pdo_init();
+            //insert query
             $query = $pdo->prepare('INSERT into user_info(`first_name`, `last_name`, `middle_name`, `contact_num`, `birth_day`, `user_type`) VALUES(:first_name, :last_name,:middle_name,:number,:birthdate,:user_type)');
 
             $query->bindParam(":first_name", $first_name);

@@ -1,4 +1,6 @@
-<?php include '../db/db_conn.php';
+<?php
+$page_title = "Pay Order";
+ include '../db/db_conn.php';
 include "../auth/auth.check.php";
 $pdo = pdo_init();
 
@@ -13,7 +15,8 @@ $pdo = pdo_init();
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Pay Order</title>
+        <title><?php $page_title; ?>
+        </title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -21,20 +24,20 @@ $pdo = pdo_init();
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
         <link rel="stylesheet" href="../css/style_payment.css" />
+        <link rel="stylesheet" href="../css/navbar.css" />
 
     </head>
 
     <body>
         <?php
-        $page_title = "Products";
+        
         include "assets/navbar.php";
-        //SELECT first_name FROM user_info  ORDER BY first_name DESC  LIMIT 1;
-        //join user info and order info
+        
         try {
             $lastOrders=$pdo->query("SELECT order_id, product_id FROM orders  ORDER BY order_id DESC  LIMIT 1 ")->fetchAll(PDO::FETCH_OBJ);
             $lastOrder=$lastOrders[0];
             //join query
-            $queries = $pdo->query("SELECT name,price,quantity FROM products a,orders b where a.id=".$lastOrder->product_id." and b.order_id=".$lastOrder->order_id)->fetchAll(PDO::FETCH_OBJ);
+            $queries = $pdo->query("SELECT a.name,a.price,b.quantity FROM products a,orders b where a.id=".$lastOrder->product_id." and b.order_id=".$lastOrder->order_id)->fetchAll(PDO::FETCH_OBJ);
             $query=$queries[0];
         } catch (PDOException $e) {
             $error = "Errors: {$e->getMessage()}";

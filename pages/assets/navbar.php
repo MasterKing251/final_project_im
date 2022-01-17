@@ -5,10 +5,10 @@ $username;
 
 if (isset($user->user_admin)) {
     $username=$user->user_admin;
-} elseif (isset($user->user_del)) {
-    $username=$user->user_del ;
-} elseif (isset($user->user_cust)) {
-    $username=$user->user_cust ;
+} elseif (isset($user->user_emp)) {
+    $username=$user->user_emp ;
+} elseif (isset($user->user_cash)) {
+    $username=$user->user_cash ;
 }
 
 ?>
@@ -57,6 +57,7 @@ if (isset($user->user_admin)) {
                         } ?> Accounts
                         </a>
                     </li>
+
                     <?php
                         if ($user->user_id) {
                             ;

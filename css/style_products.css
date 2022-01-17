@@ -3,11 +3,30 @@
   margin: 0px;
   padding: 0px;
 }
-
+body {
+  height: 100vh;
+  background: rgb(31, 252, 129);
+  background: linear-gradient(
+    30deg,
+    rgba(31, 252, 129, 1) 0%,
+    rgba(20, 115, 207, 1) 100%
+  );
+}
+.container {
+  background: #02213ec7;
+  border-radius: 10px;
+  margin-top: 10px;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 2px;
+}
 .del {
   color: white;
   background: #261007;
   border: none;
+}
+.availProd {
+  background-color: #05396b;
 }
 
 .del:hover {
@@ -24,12 +43,9 @@
 }
 .display-4 {
   font-weight: bold;
+  color: white;
 }
-.availProd {
-  padding: 10px;
-  border-radius: 25px;
-  background-color: #ab6832;
-}
+
 .coffeeContent {
   display: flex;
   flex-wrap: wrap;
@@ -41,9 +57,36 @@
 .card-img-top {
   height: 40%;
 }
+.btn {
+  margin: 3px;
+}
 .btn-primary {
-  background-color: #49281a;
-  border-color: #49281a;
+  background-color: #5cdb94;
+  border-color: #edf5e0;
+  color: #05396b;
+}
+.btn-primary:hover {
+  background-color: #389583;
+  border-color: #5cdb94;
+  color: #edf5e0;
+}
+.del {
+  color: white;
+  background: #05396b;
+  border-color: #5cdb94;
+}
+.del:hover {
+  color: #05396b;
+  background: #5cdb94;
+}
+.edit {
+  color: white;
+  background: #389583;
+  border: none;
+}
+.edit:hover {
+  background: #05396b;
+  color: #5cdb94;
 }
 .form {
   border-radius: 20px;
@@ -57,8 +100,9 @@
 label {
   font-size: 2rem;
 }
-footer {
-  height: 50px;
-  width: 100%;
-  background-color: #000000;
+.table {
+  color: white;
+}
+tr:hover {
+  color: turquoise;
 }

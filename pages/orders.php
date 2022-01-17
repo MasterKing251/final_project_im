@@ -1,7 +1,7 @@
 <?php include '../db/db_conn.php';
 include "../auth/auth.check.php";
 $pdo = pdo_init();
-
+$page_title = "Order";
 if (isset($_POST['order'])) {
     $quantity = $_POST['quantity'];
     $id = $_POST['prod_id'];
@@ -30,14 +30,15 @@ if (isset($_POST['order'])) {
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Order</title>
+        <title><?php echo $page_title;?>
+        </title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="../css/style_products.css" />
+        <link rel="stylesheet" href="../css/style_order.css" />
 
         <script>
         $(document).ready(function() {
@@ -81,12 +82,16 @@ if (isset($_POST['order'])) {
 
                         <!-- Modal body -->
                         <div class="modal-body">
-                            <span><b> Name: </b></span><input type="text" id="product" name="product" readonly
-                                style="border: 0"><br>
-                            <span><b> Price: </b> </span><input type="text" id="price" name="price" readonly
-                                style="border: 0">
+                            <span><b> Name:</b></span>
+                            <div class="container">
+                                <input class=" input1" type="text" id="product" name="product" readonly
+                                    style="border: 0">
+                            </div><br>
+                            <span><b> Price: </b> </span><input style="padding-left: 100px;border: 0"
+                                class="text-center input1" type="text" id="price" name="price" readonly>
                             <input hidden type="text" id="prod_id" name="prod_id" readonly style="border: 0">
-                            <input type="text" name="quantity" id="quantity" placeholder="Quantity" required>
+                            <input class="input2" type="text" name="quantity" id="quantity" placeholder="Quantity"
+                                required>
                         </div>
 
                         <!-- Modal footer -->
@@ -103,11 +108,11 @@ if (isset($_POST['order'])) {
         </div>
 
         <?php
-        $page_title = "Products";
+        
         include "assets/navbar.php" ?>
         <br />
         <div class="container availProd">
-            <div class="display-4">Menu</div>
+            <div class="display-4 text-center">Menu</div>
             <br />
             <div class="container coffeeContent">
 
@@ -118,15 +123,15 @@ $list = $query->fetchAll(PDO::FETCH_OBJ);
 foreach ($list as $bd) { ?>
 
 
-                <div class="card" style="width: 18rem" id="prod">
+                <div class=" card" style="width: 18rem" id="prod">
 
-                    <img class="mage" src="../img/<?php echo $bd->file; ?>" alt="" height="200" class="card-img-top">
                     <div class="card-body">
                         <h5 name="prod_id" id="prod_id" hidden><?php echo $bd->id; ?>
                         </h5>
-                        <h5 class="card-title" name="<?php echo $bd->name; ?>" id="prod_name"><?php echo $bd->name; ?>
+                        <h5 class="card-title card-title-name" name="<?php echo $bd->name; ?>" id="prod_name">
+                            <?php echo $bd->name; ?>
                         </h5>
-
+                        <hr>
                         <h5 class="card-title" id="prod_price">P <?php echo number_format($bd->price, 2); ?>
                         </h5>
                         <p class="card-text">
