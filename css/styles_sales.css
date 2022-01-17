@@ -21,8 +21,7 @@ table {
   width: 98%;
   color: white;
   border: none;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5);
+  background: #02213ec7;
   border-radius: 10px;
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -41,4 +40,7 @@ th {
   text-align: left;
   font-size: 20px;
   padding: 8px;
+}
+.text-center {
+  font-weight: bold;
 }

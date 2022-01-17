@@ -20,7 +20,7 @@ body {
 }
 .content {
   margin: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.876);
+  background: #02213ec7;
   border-radius: 10px;
   color: White;
 }
@@ -29,4 +29,10 @@ body {
 }
 .table {
   color: White;
+}
+.bold {
+  font-weight: bold;
+}
+.hov :hover {
+  color: aqua;
 }

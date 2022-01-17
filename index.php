@@ -19,7 +19,7 @@ try {
 
 <body>
     <div class="content">
-        <h1 class="text-center display-4">Dashboard</h1>
+        <h1 class="text-center display-4 bold">Dashboard</h1>
         <div class="tables ">
 
             <br>
@@ -38,11 +38,12 @@ try {
                     <tbody class="table-body ">
 
                         <?php foreach ($accounts as $account) { ?>
-                        <tr class="">
+                        <tr class="hov">
                             <td style="text-transform: uppercase;">
                                 <?php echo $account->first_name." ".$account->middle_name." ". $account->last_name;?>
                             </td>
-                            <td style="text-transform: uppercase;"><?php echo $account->user_type; ?>
+                            <td class="text-center" style="text-transform: uppercase;">
+                                <?php echo $account->user_type; ?>
                             </td>
 
                         </tr>
@@ -62,14 +63,14 @@ try {
 
                         </tr>
                     </thead>
-                    <tbody class="table-body ">
+                    <tbody class="table-body hov">
 
                         <?php foreach ($products as $product) { ?>
-                        <tr class="">
+                        <tr class="hov">
                             <td style="text-transform: uppercase;">
                                 <?php echo $product->name;?>
                             </td>
-                            <td style="text-transform: uppercase;"><?php echo $product->price; ?>
+                            <td class="text-center" style="text-transform: uppercase;"><?php echo $product->price; ?>
                             </td>
 
                         </tr>
