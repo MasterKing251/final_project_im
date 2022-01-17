@@ -1,0 +1,44 @@
+body {
+  background: rgb(31, 252, 129);
+  background: linear-gradient(
+    30deg,
+    rgba(31, 252, 129, 1) 0%,
+    rgba(20, 115, 207, 1) 100%
+  );
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  padding: 5px 10px;
+  color: white;
+}
+.hov:hover {
+  color: aqua;
+}
+table {
+  margin: 1%;
+  width: 98%;
+  color: white;
+  border: none;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+.selected {
+  background-color: #efefef;
+}
+.table-lg {
+  color: white;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 20px;
+  padding: 8px;
+}

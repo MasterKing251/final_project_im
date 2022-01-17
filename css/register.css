@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  background: rgb(31, 252, 129);
+  background: linear-gradient(
+    30deg,
+    rgba(31, 252, 129, 1) 0%,
+    rgba(20, 115, 207, 1) 100%
+  );
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: white;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.container form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-inbox {
+  width: calc(100% / 2 - 20px);
+}
+.user-details .input-inbox .details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-inbox input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.dropdown {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-inbox input:focus,
+.user-details .input-inbox input:valid {
+  border-color: #05396b;
+}
+
+.btn-color {
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #05396b;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+}
+
+.btn-color:hover {
+  transition: 0.5s;
+  background: #5cdb94;
+  border: 1px solid #5cdb94;
+  color: #05396b;
+}
+.signup {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.signup a {
+  color: #7abefd;
+  padding-bottom: 100px;
+  text-decoration: none;
+}
+.signup a:hover {
+  color: #5cdb94;
+  text-decoration: underline;
+}
+
+@media (max-width: 584px) {
+  form .user-details .input-inbox {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .gender-details .category {
+    width: 100%;
+  }
+  .container form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar {
+    width: 0;
+  }
+}

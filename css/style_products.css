@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.del {
+  color: white;
+  background: #261007;
+  border: none;
+}
+
+.del:hover {
+  background: #692307;
+  color: #db6f30;
+}
+.oozIcon {
+  height: 50px;
+  width: auto;
+}
+.navbar {
+  background-color: #000000;
+  font-size: 1.5rem;
+}
+.display-4 {
+  font-weight: bold;
+}
+.availProd {
+  padding: 10px;
+  border-radius: 25px;
+  background-color: #ab6832;
+}
+.coffeeContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  margin: 0.5rem;
+}
+.card-img-top {
+  height: 40%;
+}
+.btn-primary {
+  background-color: #49281a;
+  border-color: #49281a;
+}
+.form {
+  border-radius: 20px;
+  color: white;
+  padding: 50px;
+  background-color: #dfb78c;
+}
+.add {
+  font-size: 2rem;
+}
+label {
+  font-size: 2rem;
+}
+footer {
+  height: 50px;
+  width: 100%;
+  background-color: #000000;
+}

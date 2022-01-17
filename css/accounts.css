@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  background: rgb(31, 252, 129);
+  background: linear-gradient(
+    30deg,
+    rgba(31, 252, 129, 1) 0%,
+    rgba(20, 115, 207, 1) 100%
+  );
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.content {
+  height: 100vh;
+}
+.accounts {
+  color: rgb(255, 255, 255);
+}
+.col-md-12 {
+  margin-top: 1rem;
+}
+.card {
+  color: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.876);
+}
+.table {
+  border-radius: 10px;
+}
+.table-body :hover {
+  color: #5cdb94;
+}
+.text-center {
+  color: rgb(255, 255, 255);
+}
+.fontSize {
+  font-size: 20px;
+  font-weight: normal;
+  color: white;
+}
+.del {
+  color: white;
+  background: #05396b;
+  border: none;
+}
+.del:hover {
+  color: #05396b;
+  background: #5cdb94;
+}
+.edit {
+  color: white;
+  background: #389583;
+  border: none;
+}
+.edit:hover {
+  background: #05396b;
+}
+.view {
+  color: white;
+  background: #5cdb94;
+  border: none;
+}
+.view:hover {
+  color: #05396b;
+  background: #30b362;
+}

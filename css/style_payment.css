@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.oozIcon {
+  height: 50px;
+  width: auto;
+}
+.navbar {
+  background-color: #000000;
+  font-size: 1.5rem;
+}
+
+body {
+  background: rgb(31, 252, 129);
+  background: linear-gradient(
+    30deg,
+    rgba(31, 252, 129, 1) 0%,
+    rgba(20, 115, 207, 1) 100%
+  );
+  background-size: cover;
+  background-attachment: fixed;
+}
+.container {
+  background-color: black;
+  color: white;
+}
+.inputs {
+  margin-left: 20px;
+  width: 100px;
+  height: 50px;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px 30px;
+  border-radius: 6px;
+  color: white;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.container form .user-details {
+  display: block;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-inbox {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+.user-details .input-inbox .details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-inbox input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.details {
+  font-size: 20px;
+  margin: 10px;
+}
+.user-details .input-inbox input:focus,
+.user-details .input-inbox input:valid {
+  border-color: #ac5033;
+}
+
+.btn-color {
+  background-color: #b9590b;
+  margin-bottom: 15px;
+  color: white;
+  width: 100%;
+}
+btn-color:hover {
+  background: #883403;
+  color: #fb8f36;
+}
+
+@media (max-width: 584px) {
+  form .user-details .input-inbox {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .gender-details .category {
+    width: 100%;
+  }
+  .container form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar {
+    width: 0;
+  }
+}
