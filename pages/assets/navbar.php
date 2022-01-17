@@ -17,10 +17,10 @@ if (isset($user->user_admin)) {
 
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img class="image-fluid oozIcon"
-                    <?php if ($page_title == "OOZ-Dashboard") { ?> src="img/oozIcon.png" alt="OOZ Icon">
+            <a class="navbar-brand" href="#"><img class="image-fluid icon"
+                    <?php if ($page_title == "OOZ-Dashboard") { ?> src="img/icons8_java_100px_1.png" alt=" Icon">
                 <?php } else { ?>
-                src="../img/oozIcon.png" alt="OOZ Icon"> <?php } ?>
+                src="../img/icons8_java_100px_1.png" alt="OOZ Icon"> <?php } ?>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
