@@ -1,21 +1,14 @@
 <?php include '../db/db_conn.php';
 include "../auth/auth.check.php";
 $pdo = pdo_init();
-
+$page_title = "Pay Order";
 if (isset($_POST['submit'])) {
     $products = $_POST['products'];
     $quantity = $_POST['quantity'];
     var_dump($products);
-    // $add = $pdo->prepare("INSERT INTO `sales`(`name`, `price`)
-    // VALUES (:name,:price)");
-    // $add->bindParam(":name", $pname);
-    // $add->bindParam(":price", $price);
     foreach ($products as $product) {
         echo $product;
     }
-
-    // $ok = $add->execute();
-    // echo "<meta http-equiv='refresh' content='0'>";
 }
 
 ?>
@@ -36,6 +29,8 @@ if (isset($_POST['submit'])) {
         </script>
 
         <link rel="stylesheet" href="../css/style_order.css" />
+
+        <link rel="stylesheet" href="assets/navbar.php" />
 
 
         <style>
@@ -64,7 +59,7 @@ if (isset($_POST['submit'])) {
 
 
         <?php
-        $page_title = "Products";
+        
         include "assets/navbar.php" ?>
         <br />
         <div class="container availProd">

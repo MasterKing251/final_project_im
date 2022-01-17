@@ -43,6 +43,9 @@ body {
   font-weight: bold;
   color: white;
 }
+.welcome {
+  font-size: 2px;
+}
 .del {
   color: white;
   background: #05396b;

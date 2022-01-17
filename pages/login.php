@@ -17,14 +17,7 @@ if (isset($_POST['login'])) {
         $query->bindParam(":password", $password);
         $query->execute();
         $admin = $query->fetchAll(PDO::FETCH_OBJ);
-        // For new login, must have union skemi
-        // $age = array("admin"=>123, "admin1"=>213, "Joe"=>232);
-
-        // foreach ($age as $x=> $x_value) {
-        //     if ($x == 'admin' and $x_value == 123) {
-        //         echo "sad";
-        //     }
-        // }
+        
         $query = $pdo->prepare("SELECT * from emp_info WHERE emp_info.user_emp=:username AND emp_info.password=:password");
 
         $query->bindParam(":username", $username);

@@ -38,7 +38,11 @@ if ($page_title==("OOZ-Dashboard")) {
         <link rel="stylesheet" href="../css/navbar.css">
         <?php } ?>
         <?php if ($page_title == "Order") { ?>
-        <link rel="stylesheet" href="../css/accounts.css">
+        <link rel="stylesheet" href="../css/style_order.css">
+        <link rel="stylesheet" href="../css/navbar.css">
+        <?php } ?>
+        <?php if ($page_title == "Pay Order") { ?>
+        <link rel="stylesheet" href="../css/style_order.css">
         <link rel="stylesheet" href="../css/navbar.css">
         <?php } ?>
         <?php if ($page_title == "View Account") { ?>

@@ -13,14 +13,7 @@ try {
 } catch (PDOException $e) {
     $error = "Errors: {$e->getMessage()} ";
 }
-if (isset($user)) {
-    try {
-        $pdo = pdo_init();
-        $userinfos = $pdo->query('SELECT * from user_info where user_id='.$user->user_id)->fetchAll((PDO::FETCH_OBJ));
-    } catch (PDOException $e) {
-        $error = "Errors: {$e->getMessage()} ";
-    }
-}
+
 ?>
 <div class="content">
 
@@ -28,10 +21,8 @@ if (isset($user)) {
         <div class="card">
             <div class="card-body">
                 <h1 style="text-transform: capitalize;" class="  fontSize display-4 ">
-                    Welcome
-                    <?php foreach ($userinfos as $userinfo) {
-    echo "$userinfo->first_name $userinfo->last_name";
-} ?>
+                    <div class="title text-center">Accounts</div>
+
                 </h1>
 
                 <hr class="mb-2">

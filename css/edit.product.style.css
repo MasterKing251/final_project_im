@@ -1,0 +1,30 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(31, 252, 129);
+  background: linear-gradient(
+    30deg,
+    rgba(31, 252, 129, 1) 0%,
+    rgba(20, 115, 207, 1) 100%
+  );
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.card {
+  margin-top: 10%;
+  background: #02213ec7;
+  border-radius: 10px;
+  color: white;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 2px;
+}
+.form-group {
+  margin: 2px;
+}
