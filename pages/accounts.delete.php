@@ -59,8 +59,13 @@ if (!isset($_GET['user_id'])) {
                     $_SESSION['status'] = [
                         'class' => 'success',
                         'message' => 'Account successfully deleted.'
-                    ];
-                    header('Location: accounts.php');
+                    ]; ?>
+<script>
+alert("Account Deleted");
+window.location.href = 'accounts.php';
+</script>
+<?php
+                    // header('Location: accounts.php');
                 }
             } catch (PDOException $e) {
                 echo $e->getMessage();

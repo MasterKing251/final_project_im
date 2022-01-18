@@ -1,6 +1,6 @@
 <?php
 $page_title = "Accounts";
-include "../auth/no.auth.check.php";
+include "../auth/auth.check.php";
 include "../includes/header.php";
 include "assets/navbar.php";
 

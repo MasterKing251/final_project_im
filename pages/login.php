@@ -35,18 +35,33 @@ if (isset($_POST['login'])) {
         
         if ($admin) {
             $user = $admin[0];
-            $_SESSION['user'] = $user;
-            header("Location: ../index.php");
+            $_SESSION['user'] = $user; ?>
+<script>
+alert("Welcome to your admin account")
+
+location.replace("../index.php");
+</script>
+<?php
         }
         if ($cashier) {
             $user = $cashier[0];
-            $_SESSION['user'] = $user;
-            header("Location: ../index.php");
+            $_SESSION['user'] = $user; ?>
+<script>
+alert("Welcome to your cashier account")
+
+location.replace("../index.php");
+</script>
+<?php
         }
         if ($emp) {
             $user = $emp[0];
-            $_SESSION['user'] = $user;
-            header("Location: ../index.php");
+            $_SESSION['user'] = $user; ?>
+<script>
+alert("Welcome to your employee account")
+
+location.replace("../index.php");
+</script>
+<?php
         } else {
             $errors = "Invalid Username or Password";
         }

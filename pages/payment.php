@@ -85,6 +85,7 @@ if (isset($_POST['pay'])) {
         
                 if ($query3) { ?>
     <script>
+    alert("Order created")
     location.replace("orders.php");
     </script>
     <?php
@@ -93,5 +94,3 @@ if (isset($_POST['pay'])) {
         }?>
 
 </html>
-<?php
-include "../js/alert.php";

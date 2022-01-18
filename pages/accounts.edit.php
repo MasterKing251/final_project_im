@@ -1,6 +1,6 @@
 <?php
 $page_title = "Edit Account";
-include "../auth/no.auth.check.php";
+include "../auth/auth.check.php";
 include "../includes/header.php";
 include "assets/navbar.php";
 
@@ -59,6 +59,7 @@ if (isset($_POST['update'])) {
                 ];
             $_SESSION['status'] = $status; ?>
 <script>
+alert("Account updated");
 window.location.href = 'accounts.php';
 </script>
 <?php

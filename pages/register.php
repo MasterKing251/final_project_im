@@ -59,7 +59,16 @@ if (isset($_POST["submit"])) {
                         $query3->bindParam(":password", $password);
                         $query3->execute();
                         if ($query3) {
-                            header("Location: login.php");
+                            // echo '';
+                            if ($query3 && $query) {
+                                ?>
+<script>
+alert("You can know Login using your username and password")
+
+location.replace("login.php");
+</script>
+<?php
+                            }
                         }
                     } catch (PDOException $e) {
                         $errors = $e->getMessage();
